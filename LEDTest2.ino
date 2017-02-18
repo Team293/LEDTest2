@@ -13,6 +13,7 @@
 // Can be any valid output pins.
 int dataPin = 2;       // 'yellow' wire
 int clockPin = 3;      // 'green' wire
+int =a;
 // Don't forget to connect 'blue' to ground and 'red' to +5V
 
 // Timer 1 is also used by the strip to send pixel clocks
@@ -32,7 +33,9 @@ void setup() {
 
 
 void loop() {
-  int a = Serial.parseInt();
+  if (Serial.available()) {
+    a = Serial.parseInt();
+   }
   if (a==0) {
     colorWipe(1,4,Color(0,255,0), 50);
     colorWipe(5,9,Color(255,0,0),50);
